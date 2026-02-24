@@ -6,7 +6,7 @@ from tree_sitter_languages import get_language
 
 app = FastAPI()
 
-# -------- Request Model --------
+# -------- Request Model -------
 class CodeRequest(BaseModel):
     studentId: int
     language: str
