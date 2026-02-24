@@ -6,3 +6,6 @@ AI-Services/venv310/
 # Python cache
 __pycache__/
 *.pyc
+
+# Spring Boot secrets
+application.properties
