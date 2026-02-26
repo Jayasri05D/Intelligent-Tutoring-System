@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.dto.CodeRequest;
+import com.example.backend.dto.CompilerResponseDTO;
 import com.example.backend.dto.AnalyzeResponseDTO;
 import com.example.backend.service.SubmissionService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -27,4 +28,13 @@ public class SubmissionController {
     public AnalyzeResponseDTO analyze(@RequestBody CodeRequest request) {
         return submissionService.analyzeAndSave(request);
     }
+
+    @PostMapping("/run")
+@Operation(
+        summary = "Run code",
+        description = "Executes student code and returns runtime output"
+)
+public CompilerResponseDTO run(@RequestBody CodeRequest request) {
+    return submissionService.runCode(request);
+}
 }

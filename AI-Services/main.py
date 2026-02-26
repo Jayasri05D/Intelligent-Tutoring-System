@@ -1,3 +1,6 @@
+import subprocess
+import tempfile
+import os
 from fastapi import FastAPI
 from pydantic import BaseModel
 from tree_sitter import Parser
@@ -106,13 +109,26 @@ def contains_break(node):
     return False
 
 
+def is_true_literal(node):
+    # If the node itself is True
+    if node.type == "true":
+        return True
+
+    # Recursively check children (handles parentheses)
+    for child in node.children:
+        if is_true_literal(child):
+            return True
+
+    return False
+
+
 def detect_infinite_while(node, violations):
 
     if node.type == "while_statement":
         condition = node.child_by_field_name("condition")
         body = node.child_by_field_name("body")
 
-        if condition and condition.text.decode() == "True":
+        if condition and is_true_literal(condition):
             if body and not contains_break(body):
                 violations.append({
                     "rule_id": "R-LOOP-INFINITE-01",
@@ -219,6 +235,69 @@ def remove_duplicate_violations(violations):
 
     return unique
 
+# =========================================================
+# SAFE PYTHON EXECUTION (Interpreter Layer)
+# =========================================================
+def execute_python_code(code: str):
+    try:
+        # Create temporary file
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".py", mode="w", encoding="utf-8") as tmp:
+            tmp.write(code)
+            tmp_path = tmp.name
+
+        # Run with timeout (prevents infinite loop crash)
+        result = subprocess.run(
+            ["python", tmp_path],
+            capture_output=True,
+            text=True,
+            timeout=3   # 3 second execution limit
+        )
+
+        # Clean up file
+        os.remove(tmp_path)
+
+        return {
+            "output": result.stdout,
+            "error": result.stderr
+        }
+
+    except subprocess.TimeoutExpired:
+        return {
+            "output": "",
+            "error": "Execution timed out (possible infinite loop)"
+        }
+
+    except Exception as e:
+        return {
+            "output": "",
+            "error": str(e)
+        }
+
+# =========================================================
+# ANALYZE ENDPOINT
+# =========================================================
+# @app.post("/analyze")
+# def analyze_code(request: CodeRequest):
+
+#     tree = parser.parse(bytes(request.code, "utf8"))
+#     root = tree.root_node
+
+#     violations = []
+
+#     detect_loop_boundary_issue(root, violations)
+#     detect_infinite_while(root, violations)
+#     detect_missing_base_case(root, violations)
+#     detect_uninitialized_variable(root, violations)
+
+#     violations = remove_duplicate_violations(violations)
+#     violations = map_concepts(violations)
+#     violations = generate_feedback(violations)
+
+#     return {
+#         "studentId": request.studentId,
+#         "has_syntax_error": root.has_error,
+#         "violations": violations
+#     }
 
 # =========================================================
 # ANALYZE ENDPOINT
@@ -231,6 +310,7 @@ def analyze_code(request: CodeRequest):
 
     violations = []
 
+    # Semantic Detection
     detect_loop_boundary_issue(root, violations)
     detect_infinite_while(root, violations)
     detect_missing_base_case(root, violations)
@@ -240,8 +320,13 @@ def analyze_code(request: CodeRequest):
     violations = map_concepts(violations)
     violations = generate_feedback(violations)
 
+    # Runtime Execution
+    execution_result = execute_python_code(request.code)
+
     return {
         "studentId": request.studentId,
         "has_syntax_error": root.has_error,
+        "runtime_output": execution_result["output"],
+        "runtime_error": execution_result["error"],
         "violations": violations
     }
