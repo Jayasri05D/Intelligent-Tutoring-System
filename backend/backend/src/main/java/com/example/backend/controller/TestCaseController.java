@@ -1,10 +1,16 @@
 package com.example.backend.controller;
 
+import com.example.backend.dto.CodeRequest;
 import com.example.backend.dto.TestCaseRequestDTO;
+import com.example.backend.dto.TestCaseResultDTO;
 import com.example.backend.entity.Question;
 import com.example.backend.entity.TestCase;
 import com.example.backend.repository.QuestionRepository;
 import com.example.backend.repository.TestCaseRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,4 +42,5 @@ public class TestCaseController {
 
         return ResponseEntity.ok("Test case added successfully");
     }
+    
 }

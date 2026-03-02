@@ -29,7 +29,7 @@
 //     }
 // }
 package com.example.backend.dto;
-
+//this is for the compiler in the frontned
 public class CompilerResponseDTO {
 
     private String runtime_output;
