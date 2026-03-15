@@ -1,0 +1,133 @@
+{
+  "1": {
+    "concept_history": {
+      "loop": [
+        "weak",
+        "weak"
+      ],
+      "comparison": [
+        "weak",
+        "weak"
+      ],
+      "initialization": [
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "return": [
+        "weak",
+        "weak"
+      ],
+      "output": [
+        "weak",
+        "weak"
+      ],
+      "edge_case": [
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "condition": [
+        "weak",
+        "weak"
+      ],
+      "boundary": [
+        "weak",
+        "weak"
+      ],
+      "input": [
+        "weak"
+      ],
+      "type_checking": [
+        "weak"
+      ],
+      "error_handling": [
+        "weak"
+      ],
+      "variable": [
+        "weak"
+      ]
+    },
+    "misconception_log": [
+      {
+        "timestamp": 1773549806,
+        "error_id": "LE-001",
+        "concept_path": [
+          "loop",
+          "comparison",
+          "initialization"
+        ]
+      },
+      {
+        "timestamp": 1773549806,
+        "error_id": "LE-002",
+        "concept_path": [
+          "return",
+          "output"
+        ]
+      },
+      {
+        "timestamp": 1773549806,
+        "error_id": "LE-003",
+        "concept_path": [
+          "edge_case",
+          "condition",
+          "initialization"
+        ]
+      },
+      {
+        "timestamp": 1773592762,
+        "error_id": "LE-001",
+        "concept_path": [
+          "initialization",
+          "boundary",
+          "edge_case"
+        ]
+      },
+      {
+        "timestamp": 1773592762,
+        "error_id": "LE-002",
+        "concept_path": [
+          "input",
+          "type_checking",
+          "error_handling"
+        ]
+      },
+      {
+        "timestamp": 1773592986,
+        "error_id": "LE-001",
+        "concept_path": [
+          "edge_case",
+          "boundary",
+          "condition"
+        ]
+      },
+      {
+        "timestamp": 1773594848,
+        "error_id": "LE-001",
+        "concept_path": [
+          "loop",
+          "comparison"
+        ]
+      },
+      {
+        "timestamp": 1773594848,
+        "error_id": "LE-002",
+        "concept_path": [
+          "output",
+          "return"
+        ]
+      },
+      {
+        "timestamp": 1773594848,
+        "error_id": "LE-003",
+        "concept_path": [
+          "variable",
+          "initialization"
+        ]
+      }
+    ],
+    "session_count": 4
+  }
+}

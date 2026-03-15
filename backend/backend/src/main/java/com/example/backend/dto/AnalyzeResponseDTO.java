@@ -12,15 +12,7 @@ public class AnalyzeResponseDTO {
     private TestSummaryDTO test_summary;
     private List<TestResultDTO> test_results;
     private List<LogicalErrorDTO> logical_errors;
-    private List<ViolationDTO> violations;
-    public List<ViolationDTO> getViolations() {
-        return violations;
-    }
-
-    public void setViolations(List<ViolationDTO> violations) {
-        this.violations = violations;
-    }
-
+   private LearnerProfileDTO learner_profile;
     private Integer error_count;
     private boolean has_logical_errors;
 
@@ -97,4 +89,6 @@ public class AnalyzeResponseDTO {
     public void setHas_logical_errors(boolean has_logical_errors) {
         this.has_logical_errors = has_logical_errors;
     }
+    public LearnerProfileDTO getLearner_profile() { return learner_profile; }
+public void setLearner_profile(LearnerProfileDTO v) { this.learner_profile = v; }
 }

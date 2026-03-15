@@ -9,3 +9,5 @@ __pycache__/
 
 # Spring Boot secrets
 application.properties
+
+.env

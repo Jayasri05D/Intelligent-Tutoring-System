@@ -12,7 +12,7 @@ public class CodeAnalysisDTO {
     private int loop_count;
     private int max_nesting_depth;
     private List<String> accumulator_vars;
-
+private List<String> defined_functions;
     public boolean isHas_loop() {
         return has_loop;
     }
@@ -76,4 +76,6 @@ public class CodeAnalysisDTO {
     public void setAccumulator_vars(List<String> accumulator_vars) {
         this.accumulator_vars = accumulator_vars;
     }
+    public List<String> getDefined_functions() { return defined_functions; }
+public void setDefined_functions(List<String> v) { this.defined_functions = v; }
 }
