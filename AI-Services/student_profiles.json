@@ -1,0 +1,231 @@
+{
+  "1": {
+    "concept_history": {
+      "loop": [
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "comparison": [
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "initialization": [
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "return": [
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "output": [
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "edge_case": [
+        "weak",
+        "weak",
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "condition": [
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "boundary": [
+        "weak",
+        "weak",
+        "weak"
+      ],
+      "input": [
+        "weak"
+      ],
+      "type_checking": [
+        "weak"
+      ],
+      "error_handling": [
+        "weak"
+      ],
+      "variable": [
+        "weak",
+        "weak"
+      ],
+      "accumulator": [
+        "weak",
+        "weak"
+      ]
+    },
+    "misconception_log": [
+      {
+        "timestamp": 1773549806,
+        "error_id": "LE-001",
+        "concept_path": [
+          "loop",
+          "comparison",
+          "initialization"
+        ]
+      },
+      {
+        "timestamp": 1773549806,
+        "error_id": "LE-002",
+        "concept_path": [
+          "return",
+          "output"
+        ]
+      },
+      {
+        "timestamp": 1773549806,
+        "error_id": "LE-003",
+        "concept_path": [
+          "edge_case",
+          "condition",
+          "initialization"
+        ]
+      },
+      {
+        "timestamp": 1773592762,
+        "error_id": "LE-001",
+        "concept_path": [
+          "initialization",
+          "boundary",
+          "edge_case"
+        ]
+      },
+      {
+        "timestamp": 1773592762,
+        "error_id": "LE-002",
+        "concept_path": [
+          "input",
+          "type_checking",
+          "error_handling"
+        ]
+      },
+      {
+        "timestamp": 1773592986,
+        "error_id": "LE-001",
+        "concept_path": [
+          "edge_case",
+          "boundary",
+          "condition"
+        ]
+      },
+      {
+        "timestamp": 1773594848,
+        "error_id": "LE-001",
+        "concept_path": [
+          "loop",
+          "comparison"
+        ]
+      },
+      {
+        "timestamp": 1773594848,
+        "error_id": "LE-002",
+        "concept_path": [
+          "output",
+          "return"
+        ]
+      },
+      {
+        "timestamp": 1773594848,
+        "error_id": "LE-003",
+        "concept_path": [
+          "variable",
+          "initialization"
+        ]
+      },
+      {
+        "timestamp": 1773644341,
+        "error_id": "LE-001",
+        "concept_path": [
+          "output",
+          "return",
+          "comparison"
+        ]
+      },
+      {
+        "timestamp": 1773644341,
+        "error_id": "LE-002",
+        "concept_path": [
+          "loop",
+          "comparison",
+          "accumulator"
+        ]
+      },
+      {
+        "timestamp": 1773644341,
+        "error_id": "LE-003",
+        "concept_path": [
+          "variable",
+          "initialization",
+          "accumulator"
+        ]
+      },
+      {
+        "timestamp": 1773644400,
+        "error_id": "LE-001",
+        "concept_path": [
+          "loop",
+          "comparison"
+        ]
+      },
+      {
+        "timestamp": 1773644400,
+        "error_id": "LE-002",
+        "concept_path": [
+          "return",
+          "output"
+        ]
+      },
+      {
+        "timestamp": 1773644400,
+        "error_id": "LE-003",
+        "concept_path": [
+          "edge_case",
+          "condition"
+        ]
+      },
+      {
+        "timestamp": 1773644430,
+        "error_id": "LE-001",
+        "concept_path": [
+          "loop",
+          "comparison"
+        ]
+      },
+      {
+        "timestamp": 1773644430,
+        "error_id": "LE-002",
+        "concept_path": [
+          "output",
+          "return"
+        ]
+      },
+      {
+        "timestamp": 1773644430,
+        "error_id": "LE-003",
+        "concept_path": [
+          "edge_case",
+          "boundary"
+        ]
+      }
+    ],
+    "session_count": 7
+  }
+}

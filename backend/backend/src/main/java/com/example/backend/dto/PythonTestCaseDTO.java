@@ -1,9 +1,9 @@
 package com.example.backend.dto;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PythonTestCaseDTO {
 
-   @JsonProperty("input")
     private String input;
 
     @JsonProperty("expected_output")
